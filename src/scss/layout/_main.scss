@@ -1,4 +1,24 @@
 // codigo aquí
+.header {
+    background-image: url(/assets/mobile/image-header.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 60vh;
+}
+.hero {
+    section {
+        svg {
+            g {
+                stroke: red;
+            }
+        }
+    }
+    img {
+        display: block;
+    }
+}
+
 .attribution {
     font-size: 11px;
     text-align: center;
