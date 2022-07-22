@@ -1,5 +1,5 @@
 (function () {
-    const hamburger = document.querySelector('nav__hamburger');
+    const hamburger = document.querySelector('.nav__hamburger');
     const list = document.querySelector('.nav__list');
     console.log(hamburger);
     console.log(list);
