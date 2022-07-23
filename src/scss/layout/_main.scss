@@ -139,12 +139,15 @@
         margin: 0;
     }
     &__image {
+        &--transform {
+            height: 30rem;
+            background: url("/assets/mobile/image-transform.jpg") no-repeat center;
+            background-size: cover;
+        }
         &--copa {
             height: 30rem;
-            background-image: url(/assets/mobile/image-stand-out.jpg);
+            background: url("/assets/mobile/image-stand-out.jpg") no-repeat center;
             background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
         }
     }
     &__services {
@@ -184,6 +187,27 @@
                 }
             }
         }
+    }
+    .audience .link a{
+        &::after {
+                content: "";
+                display: block;
+                width: 11.5rem;
+                height: .7rem;
+                background-color: $softRed;
+                margin: -.7rem auto 0;
+                border-radius: 1rem;
+                opacity: .3;
+            }
+    }
+    .service {
+        height: 70rem;
+        background: url("/assets/mobile/image-graphic-design.jpg") no-repeat center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
     }
 }
 
