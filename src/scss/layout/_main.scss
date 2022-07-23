@@ -161,7 +161,7 @@
             margin-top: 2rem;
         }
         p {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             color: $darkGrayishBlue;
             line-height: 1.5;
             margin-top: 2rem;
@@ -200,14 +200,27 @@
                 opacity: .3;
             }
     }
-    .service {
-        height: 70rem;
-        background: url("/assets/mobile/image-graphic-design.jpg") no-repeat center;
-        background-size: cover;
+    .aux {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
+        padding: 2rem;
+        height: 57rem;
+        &.graphic {
+            background: url("/assets/mobile/image-graphic-design.jpg") no-repeat center;
+            background-size: cover;
+        }
+        p {
+            font-size: 1.6rem;
+            color: $darkDesaturatedCyan;
+            line-height: 1.5;
+            margin: 3rem 0 4rem;
+        }
+        &.photography {
+            background: url("/assets/mobile/image-photography.jpg") no-repeat center;
+            background-size: cover;
+        }
     }
 }
 
