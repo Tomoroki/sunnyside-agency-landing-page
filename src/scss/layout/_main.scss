@@ -22,7 +22,18 @@
         z-index: 5;
         width: 3rem;
         height: 3rem;
-
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3rem;
+            height: 2px;
+            background-color: #242329;
+            transform: translateY(-5px);
+            transition: 0.2s;
+        }
         &.is-active .top {
             -webkit-transform: translateY(200%) rotate(45deg);
             -ms-transform: translateY(200%) rotate(45deg);
