@@ -1,10 +1,13 @@
-// codigo aquí
+// NAV BAR
 .nav {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     background-color: #3EBFFFFF;
+    &__logo {
+        display: flex;
+    }
     .container {
         margin: 0 auto;
         height: 10rem;
@@ -101,8 +104,9 @@
         row-gap: 3rem;
     }
 }
+// HEADER
 .header {
-    background-image: url(/assets/mobile/image-header.jpg);
+    background-image: url("/assets/mobile/image-header.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -220,18 +224,120 @@
         &.photography {
             background: url("/assets/mobile/image-photography.jpg") no-repeat center;
             background-size: cover;
+            p {
+                color: $darkBlue;
+            }
         }
     }
 }
 
+// TESTIMONIALS
+.testimonials {
+    padding: 2.5rem;
+    h3 {
+        text-transform: uppercase;
+        font-family: $fuenteSecundaria;
+        font-weight: 900;
+        font-size: 1.6rem;
+        color: $grayishBlue;
+        letter-spacing: .5rem;
+        margin-top: 4rem;
+        text-align: center;
+    }
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .card {
+            margin-top: 7rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 40rem;
+            img {
+                width: 7rem;
+                height: 7rem;
+                border-radius: 50%;
+            }
+            p {
+                font-size: 1.8rem;
+                color: $veryDarkGrayishBlue;
+                line-height: 1.5;
+                margin: 3rem 0;
+                text-align: center;
+            }
+            h4 {
+                font-family: $fuenteSecundaria;
+                font-weight: 900;
+                font-size: 2rem;
+                color: $veryDarkDesaturatedBlue;
+                text-align: center;
+                line-height: 1.5;
+                margin: 0;
+                span {
+                    font-family: $fuentePrincipal;
+                    font-size: 1.4rem;
+                    color: $grayishBlue;
+                }
+            }
+            &:last-child {
+                margin-bottom: 7rem;
+            }
+        }
+    }
+}
+// PROJECTS
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 18rem);
+    @include tablet {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 18rem);
+    }
+    figure {
+        margin: 0;
+    }
+    .milk {
+        background: url("/assets/mobile/image-gallery-milkbottles.jpg") no-repeat center;
+        background-size: cover;
+        
+    }
+    .orange {
+        background: url("/assets/mobile/image-gallery-orange.jpg") no-repeat center;
+        background-size: cover;
+    }
+    .cone {
+        background: url("/assets/mobile/image-gallery-cone.jpg") no-repeat center;
+        background-size: cover;
 
-
-
-.attribution {
-    font-size: 11px;
+    }
+    .sugar {
+        background: url("/assets/mobile/image-gallery-sugar-cubes.jpg") no-repeat center;
+        background-size: cover;
+    }
+}
+// FOOTER
+.footer {
+    padding: 2rem;
+    background-color: #90D4C5FF;
+    font-size: 2rem;
     text-align: center;
+    h4 {
+        font-size: 3rem;
+    }
+    &__links {
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     a {
         color: hsl(228, 45%, 44%);
+    }
+    svg {
+        path {
+            fill: $darkModerateCyan;
+        }
     }
 }
 
