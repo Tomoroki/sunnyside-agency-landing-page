@@ -1,3 +1,20 @@
+.back {
+    background-color: #3f3a3a81;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    position: fixed;
+    z-index: 10;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+        color: $white;
+        transition: 2s;
+    } 
+}
 // NAV BAR
 .nav {
     position: fixed;
@@ -15,6 +32,9 @@
         justify-content: space-between;
         align-items: center;
         max-width: 90%;
+        @include tablet {
+            max-width: 95%;
+        }
     }
     &__hamburger {
         color: #242329;
@@ -22,18 +42,6 @@
         z-index: 5;
         width: 3rem;
         height: 3rem;
-        position: relative;
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 3rem;
-            height: 2px;
-            background-color: #242329;
-            transform: translateY(-5px);
-            transition: 0.2s;
-        }
         &.is-active .top {
             -webkit-transform: translateY(200%) rotate(45deg);
             -ms-transform: translateY(200%) rotate(45deg);
@@ -61,12 +69,25 @@
             border-radius: 2px;
         }
 
-        @include desktop {
+        @include tablet {
             display: none;
         }
     }
 
     &__list {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: inherit;
+            background-color: #3EBFFFFF;
+            height: 10rem;
+            padding: 0;
+            height: 8rem;
+            max-width: 50rem;
+            clip-path: none;
+            box-shadow: none;
+        }
         display: none;
         margin-left: 2rem;
         font-size: 1.6rem;
@@ -87,15 +108,34 @@
         li {
             font-size: 2rem;
             color: $darkGrayishBlue;
+            @include tablet {
+                color: $white;
+            }
             a {
                 &:visited {
+                    @include tablet {
+                        color: $white;
+                    }
                     color: $darkGrayishBlue;
                 }
                 &:hover {
+                    @include tablet {
+                        color: $white;
+                    }
                     color: purple;
                 }
             }
             &:last-child {
+                @include tablet {
+                    background-color: $white;
+                    &:hover {
+                        background-color: #ffffff42;
+                    }
+                    &:hover a {
+                        color: $white;
+                    }
+                }
+                cursor: pointer;
                 background-color: $yellow;
                 padding: 1.5rem 3rem;
                 border-radius: 3rem;
@@ -117,6 +157,11 @@
 }
 // HEADER
 .header {
+    @include tablet {
+        height: 90vh;
+        background: url("/assets/desktop/image-header.jpg") no-repeat center;
+        background-size: cover;
+    }
     background-image: url("/assets/mobile/image-header.jpg");
     background-size: cover;
     background-position: center;
@@ -150,25 +195,55 @@
 
 // MAIN 
 .main {
+    @include tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 60rem);
+    }
     figure {
         margin: 0;
     }
     &__image {
         &--transform {
+            @include tablet {
+                height: 100%;
+                grid-row: 1 / 2;
+                grid-column: 2 / 3;
+                background: url("/assets/desktop/image-transform.jpg") no-repeat center;
+                background-size: cover;
+            }
             height: 30rem;
             background: url("/assets/mobile/image-transform.jpg") no-repeat center;
             background-size: cover;
         }
         &--copa {
+            @include tablet {
+                height: 100%;
+                grid-row: 2 / 3;
+                grid-column: 1 / 2;
+                background: url("/assets/desktop/image-stand-out.jpg") no-repeat center;
+                background-size: cover;
+            }
             height: 30rem;
             background: url("/assets/mobile/image-stand-out.jpg") no-repeat center;
             background-size: cover;
         }
     }
     &__services {
+        @include tablet {
+            padding: 15rem 13rem 15rem 15rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: left;
+        }
         padding: 3rem;
         text-align: center;
         h2 {
+            @include tablet {
+                font-size: 4rem;
+            }
             font-family: $fuenteSecundaria;
             font-weight: 900;
             font-size: 3rem;
@@ -203,17 +278,22 @@
             }
         }
     }
-    .audience .link a{
-        &::after {
-                content: "";
-                display: block;
-                width: 11.5rem;
-                height: .7rem;
-                background-color: $softRed;
-                margin: -.7rem auto 0;
-                border-radius: 1rem;
-                opacity: .3;
-            }
+    .audience{
+        @include tablet {
+            padding: 15rem 15rem 15rem 13rem;
+        }
+        .link a{
+            &::after {
+                    content: "";
+                    display: block;
+                    width: 11.5rem;
+                    height: .7rem;
+                    background-color: $softRed;
+                    margin: -.7rem auto 0;
+                    border-radius: 1rem;
+                    opacity: .3;
+                }
+        }
     }
     .aux {
         display: flex;
@@ -223,6 +303,13 @@
         padding: 2rem;
         height: 57rem;
         &.graphic {
+            @include tablet {
+                height: 100%;
+                grid-row: 3 / 4;
+                grid-column: 1 / 2;
+                background: url("/assets/desktop/image-graphic-design.jpg") no-repeat center;
+                background-size: cover;
+            }
             background: url("/assets/mobile/image-graphic-design.jpg") no-repeat center;
             background-size: cover;
         }
@@ -233,6 +320,13 @@
             margin: 3rem 0 4rem;
         }
         &.photography {
+            @include tablet {
+                height: 100%;
+                grid-row: 3 / 4;
+                grid-column: 2 / 3;
+                background: url("/assets/desktop/image-photography.jpg") no-repeat center;
+                background-size: cover;
+            }
             background: url("/assets/mobile/image-photography.jpg") no-repeat center;
             background-size: cover;
             p {
@@ -332,23 +426,37 @@
 .footer {
     padding: 2rem;
     background-color: #90D4C5FF;
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-align: center;
-    h4 {
-        font-size: 3rem;
-    }
-    &__links {
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    a {
-        color: hsl(228, 45%, 44%);
-    }
     svg {
+        margin-top: 6rem;
         path {
             fill: $darkModerateCyan;
         }
+    }
+    &__container {
+        max-width: 30rem;
+        margin: 0 auto;
+        margin-top: 4rem;
+        .links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .icons {
+            display: flex;
+            justify-content: space-between;
+            max-width: 70%;
+            align-items: center;
+            margin: 7rem auto;
+        }
+    }
+    a {
+        color: $darkModerateCyan;
+    }
+    p {
+        font-size: 1.4rem;
     }
 }
 
