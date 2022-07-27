@@ -43,7 +43,6 @@ function scrollNav() {
 function scrollSmooth(e) {
     e.preventDefault();
     const seccion = document.querySelector(e.target.attributes.href.value);
-    console.log(typeof seccion);
     seccion.scrollIntoView({
         behavior: "smooth"
     });

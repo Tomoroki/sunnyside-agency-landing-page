@@ -197,7 +197,7 @@
 .main {
     @include tablet {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 50%);
         grid-template-rows: repeat(3, 60rem);
     }
     figure {
@@ -231,19 +231,24 @@
     }
     &__services {
         @include tablet {
-            padding: 15rem 13rem 15rem 15rem;
+            padding: 0 2rem;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
             text-align: left;
         }
+        @include desktop {
+            padding: 15rem 13rem 15rem 15rem;
+        }
         padding: 3rem;
         text-align: center;
         h2 {
             @include tablet {
                 font-size: 4rem;
+                text-align: left;
             }
+            text-align: center;
             font-family: $fuenteSecundaria;
             font-weight: 900;
             font-size: 3rem;
@@ -258,13 +263,17 @@
         }
         .link {
             margin: 2rem 0 3rem;
+            cursor: pointer;
+            &:hover a::after {
+                opacity: 1;
+            }
             a {
                 color: $veryDarkDesaturatedBlue;
                 text-transform: uppercase;
                 font-family: $fuenteSecundaria;
                 font-weight: 900;
                 font-size: 1.4rem;
-                margin: 0;
+                margin: 0 0 0 .6rem;
                 &::after {
                     content: "";
                     display: block;
@@ -280,9 +289,16 @@
     }
     .audience{
         @include tablet {
+            padding: 0 2rem;
+        }
+        @include desktop {
             padding: 15rem 15rem 15rem 13rem;
         }
-        .link a{
+        .link {
+            &:hover a::after {
+                    opacity: 1;
+                }
+            a {
             &::after {
                     content: "";
                     display: block;
@@ -293,6 +309,7 @@
                     border-radius: 1rem;
                     opacity: .3;
                 }
+            }
         }
     }
     .aux {
@@ -302,6 +319,11 @@
         justify-content: flex-end;
         padding: 2rem;
         height: 57rem;
+        @include tablet {
+            h2 {
+                text-align: center;
+            }
+        }
         &.graphic {
             @include tablet {
                 height: 100%;
@@ -318,6 +340,7 @@
             color: $darkDesaturatedCyan;
             line-height: 1.5;
             margin: 3rem 0 4rem;
+            text-align: center;
         }
         &.photography {
             @include tablet {
@@ -339,6 +362,9 @@
 // TESTIMONIALS
 .testimonials {
     padding: 2.5rem;
+    @include desktop {
+        padding: 10rem 15rem 15rem;
+    }
     h3 {
         text-transform: uppercase;
         font-family: $fuenteSecundaria;
@@ -353,12 +379,17 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        @include desktop {
+            flex-direction: row;
+            justify-content: center;
+            gap: 1rem;
+        }
         .card {
             margin-top: 7rem;
             display: flex;
             flex-direction: column;
             align-items: center;
-            max-width: 40rem;
+            max-width: 36rem;
             img {
                 width: 7rem;
                 height: 7rem;
@@ -386,6 +417,9 @@
                 }
             }
             &:last-child {
+                @include desktop {
+                    margin-bottom: 0;
+                }
                 margin-bottom: 7rem;
             }
         }
@@ -398,26 +432,42 @@
     grid-template-rows: repeat(2, 18rem);
     @include tablet {
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(1, 18rem);
+        grid-template-rows: repeat(1, 40rem);
     }
     figure {
         margin: 0;
     }
     .milk {
+        @include tablet {
+            background: url("/assets/desktop/image-gallery-milkbottles.jpg") no-repeat center;
+            background-size: cover;
+        }
         background: url("/assets/mobile/image-gallery-milkbottles.jpg") no-repeat center;
         background-size: cover;
         
     }
     .orange {
+        @include tablet {
+            background: url("/assets/desktop/image-gallery-orange.jpg") no-repeat center;
+            background-size: cover;
+        }
         background: url("/assets/mobile/image-gallery-orange.jpg") no-repeat center;
         background-size: cover;
     }
     .cone {
+        @include tablet {
+            background: url("/assets/desktop/image-gallery-cone.jpg") no-repeat center;
+            background-size: cover;
+        }
         background: url("/assets/mobile/image-gallery-cone.jpg") no-repeat center;
         background-size: cover;
 
     }
     .sugar {
+        @include tablet {
+            background: url("/assets/desktop/image-gallery-sugarcubes.jpg") no-repeat center;
+            background-size: cover;
+        }
         background: url("/assets/mobile/image-gallery-sugar-cubes.jpg") no-repeat center;
         background-size: cover;
     }
@@ -428,7 +478,7 @@
     background-color: #90D4C5FF;
     font-size: 1.8rem;
     text-align: center;
-    svg {
+    &__logo {
         margin-top: 6rem;
         path {
             fill: $darkModerateCyan;
@@ -450,10 +500,19 @@
             max-width: 70%;
             align-items: center;
             margin: 7rem auto;
+            svg {
+                cursor: pointer;
+                &:hover path{
+                    fill: $white;
+                }
+            }
         }
     }
     a {
         color: $darkModerateCyan;
+        &:hover {
+            color: $white;
+        }
     }
     p {
         font-size: 1.4rem;
