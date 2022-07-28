@@ -108,17 +108,12 @@
                 color: $white;
             }
             a {
+                color: $darkGrayishBlue;
                 &:visited {
                     @include tablet {
                         color: $white;
                     }
                     color: $darkGrayishBlue;
-                }
-                &:hover {
-                    @include tablet {
-                        color: $white;
-                    }
-                    color: purple;
                 }
             }
             &:last-child {
