@@ -15,7 +15,7 @@ This is a solution to the [Sunnyside agency landing page challenge on Frontend M
 
 ## Overview
 
-### The challeYour users should be able to:
+### The challenge
 
 Users should be able to:
 
