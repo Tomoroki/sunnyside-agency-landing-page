@@ -10,10 +10,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    a {
-        color: $white;
-        transition: 2s;
-    } 
 }
 // NAV BAR
 .nav {
@@ -181,6 +177,10 @@
                 text-align: center;
                 text-transform: uppercase;
                 letter-spacing: .5rem;
+                @include tablet {
+                    font-size: 6rem;
+                    padding-top: 21rem;
+                }
             }
     
             svg {
@@ -321,7 +321,14 @@
         height: 57rem;
         @include tablet {
             h2 {
+                font-size: 3rem;
                 text-align: center;
+                margin-top: 0;
+            }
+        }
+        div {
+            @include desktop {
+                margin: 0 16rem;
             }
         }
         &.graphic {
